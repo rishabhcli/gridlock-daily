@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "gridlock-daily",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "inline": true,
+        "entry": "splash.html"
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Create a new post",
+        "description": "Post a Gridlock Daily puzzle",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-create"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  },
+  "scheduler": {
+    "tasks": {
+      "daily-post": {
+        "endpoint": "/internal/scheduler/daily-post",
+        "cron": "5 0 * * *"
+      }
+    }
+  },
+  "permissions": {
+    "reddit": {
+      "asUser": ["SUBMIT_COMMENT"]
+    }
+  },
+  "scripts": {
+    "dev": "node tools/build.mjs --watch",
+    "build": "node tools/build.mjs"
+  }
+}

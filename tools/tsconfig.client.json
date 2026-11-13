@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowUnreachableCode": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "types": [],
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2023"
+    ],
+    "jsx": "react-jsx",
+    "customConditions": [
+      "browser"
+    ]
+  },
+  "include": [
+    "../src/client/**/*",
+    "../src/shared/**/*"
+  ],
+  "exclude": [
+    "../src/**/*.test.ts"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tools/tsconfig.client.json",
+  "include": [
+    "src/client/**/*",
+    "src/shared/**/*"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
+}
